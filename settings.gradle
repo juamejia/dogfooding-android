@@ -1,0 +1,12 @@
+buildscript {
+    // have the same repositories applied to buildscript…
+    apply from:"$rootDir/gradle/repositories.gradle", to:buildscript
+    
+    dependencies {
+        classpath "com.mercadolibre.android.gradle:baseplugin:$meliPluginGradleVersion"
+    }
+}
+
+include ':testapp', ':app'
+apply plugin: 'mercadolibre.gradle.config.settings'
+rootProject.name='dogfooding-android'

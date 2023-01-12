@@ -1,0 +1,5 @@
+/build
+
+# Files from: https://github.com/mercadolibre/mobile-cd/wiki/Publicaci%C3%B3n-de-libs-en-Android#7-actualizar-gitignore
+src/main/project.properties
+src/main/test-project.properties

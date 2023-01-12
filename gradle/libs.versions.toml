@@ -1,0 +1,81 @@
+[versions]
+##################################################################################
+# Configurer
+##################################################################################
+mlConfigurer = "30.+"
+mlConfigurerDevelop = "develop-30.+"
+mpConfigurer = "25.+"
+
+##################################################################################
+# Meli libs
+##################################################################################
+authentication = "22.+"
+commonsMeli = "24.+"
+ui = "9.+"
+baseTestApp = "9.+"
+configurationManager = "5.+"
+
+##################################################################################
+# Misc libs
+##################################################################################
+appCompat = "1.2.0"
+
+
+##################################################################################
+# Test libs
+##################################################################################
+testing = "13.+"
+
+
+[libraries]
+##################################################################################
+# Ml Configurer
+##################################################################################
+meli-configurationMl-ui = { module ="com.mercadolibre.android.configuration.provider:ui-configurator", version.ref = "mlConfigurer"}
+meli-configurationMl-drawer = { module ="com.mercadolibre.android.configuration.provider:drawer-configurator", version.ref = "mlConfigurer"}
+meli-configurationMl-actionBar = { module ="com.mercadolibre.android.configuration.provider:action-bar-configurator", version.ref = "mlConfigurer"}
+meli-configurationMl-workmanager = { module ="com.mercadolibre.android.configuration.provider:workmanager-configurator", version.ref = "mlConfigurer"}
+meli-configurationMl-webkit = { module ="com.mercadolibre.android.configuration.provider:webkit-configurator", version.ref = "mlConfigurer"}
+meli-configurationMl-site = { module ="com.mercadolibre.android.configuration.provider:site-configurator", version.ref = "mlConfigurer"}
+meli-configurationMl-onDemand = { module ="com.mercadolibre.android.configuration.provider:on-demand-configurator", version.ref = "mlConfigurer"}
+meli-configurationMl-moduleTracking = { module ="com.mercadolibre.android.configuration.provider:module-tracking-configurator", version.ref = "mlConfigurer"}
+meli-configurationMl-matt = { module ="com.mercadolibre.android.configuration.provider:matt-configurator", version.ref = "mlConfigurer"}
+meli-configurationMl-localStorage = { module ="com.mercadolibre.android.configuration.provider:local-storage-configurator", version.ref = "mlConfigurer"}
+meli-configurationMl-adjust-develop = { module ="com.mercadolibre.android.configuration.provider:adjust-configurator", version.ref = "mlConfigurerDevelop"}
+meli-configurationMl-analytics-develop = { module ="com.mercadolibre.android.configuration.provider:analytics-configurator", version.ref = "mlConfigurerDevelop"}
+meli-configurationMl-behaviour-develop = { module ="com.mercadolibre.android.configuration.provider:behaviour-configurator", version.ref = "mlConfigurerDevelop"}
+meli-configurationMl-crashtrack-develop = { module ="com.mercadolibre.android.configuration.provider:crashtrack-configurator", version.ref = "mlConfigurerDevelop"}
+meli-configurationMl-font-develop = { module ="com.mercadolibre.android.configuration.provider:font-configurator", version.ref = "mlConfigurerDevelop"}
+meli-configurationMl-fresco-develop = { module ="com.mercadolibre.android.configuration.provider:fresco-configurator", version.ref = "mlConfigurerDevelop"}
+meli-configurationMl-loggin-develop = { module ="com.mercadolibre.android.configuration.provider:logging-configurator", version.ref = "mlConfigurerDevelop"}
+meli-configurationMl-melidata-develop = { module ="com.mercadolibre.android.configuration.provider:melidata-configurator", version.ref = "mlConfigurerDevelop"}
+meli-configurationMl-restClient-develop = { module ="com.mercadolibre.android.configuration.provider:restclient-configurator", version.ref = "mlConfigurerDevelop"}
+
+##################################################################################
+# Mp Configurer
+##################################################################################
+meli-configurationMp-authentication = { module ="com.mercadopago.android.configurer:authentication-configurer",version.ref = "mpConfigurer"}
+meli-configurationMp-font = { module ="com.mercadopago.android.configurer:font-configurator",version.ref = "mpConfigurer"}
+meli-configurationMp-matt = { module ="com.mercadopago.android.configurer:matt-configurer",version.ref = "mpConfigurer"}
+meli-configurationMp-traceability = { module ="com.mercadopago.android.configurer:traceability-configurer",version.ref = "mpConfigurer"}
+meli-configurationMp-ui = { module ="com.mercadopago.android.configurer:ui-configurator",version.ref = "mpConfigurer"}
+meli-configurationMp-webkit = { module ="com.mercadopago.android.configurer:webkit-configurer",version.ref = "mpConfigurer"}
+
+##################################################################################
+# Meli libs
+##################################################################################
+meli-authentication = { module ="com.mercadolibre.android:authentication", version.ref = "authentication"}
+meli-authenticationTestUi = { module ="com.mercadolibre.android:authentication-test-ui", version.ref = "authentication"}
+meli-commonsCore = { module ="com.mercadolibre.android.commons:core", version.ref = "commonsMeli"}
+meli-commonsLogging = { module ="com.mercadolibre.android.commons:logging", version.ref = "commonsMeli"}
+meli-configurationManager = { module ="com.mercadolibre.android:configuration-manager", version.ref = "configurationManager"}
+meli-ui = { module ="com.mercadolibre.android:ui", version.ref = "ui"}
+meli-testingCore = { module ="com.mercadolibre.android.testing:core", version.ref = "testing"}
+meli-baseTestApp = { module ="com.mercadolibre.android.basetestapp:base-test-app", version.ref = "baseTestApp"}
+meli-countryUtils = { module ="com.mercadolibre.android.basetestapp:country-utils", version.ref = "baseTestApp"}
+
+
+##################################################################################
+# Misc libs
+##################################################################################
+misc-appCompat = { module ="androidx.appcompat:appcompat", version.ref = "appCompat" }
