@@ -10,8 +10,8 @@ mpConfigurer = "25.+"
 # Meli libs
 ##################################################################################
 authentication = "22.+"
-commonsMeli = "24.+"
-ui = "9.+"
+commonsMeli = "28.+"
+ui = "10.+"
 baseTestApp = "9.+"
 configurationManager = "5.+"
 
