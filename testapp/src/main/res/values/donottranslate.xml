@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- If a different base url is needed for mp, please change it here otherwise this file can be deleted -->
+    <string name="MOBILE_BASE_URL" tools:ignore="UnusedResources">https://api.mercadopago.com</string>
+</resources>

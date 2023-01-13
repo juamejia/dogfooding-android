@@ -1,0 +1,5 @@
+{
+    "platform": "Android",
+    "type": "testapp",
+    "module": ":testapp",
+}

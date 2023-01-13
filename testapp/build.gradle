@@ -1,0 +1,111 @@
+apply plugin: 'mercadolibre.gradle.config.app'
+/*
+    These configurations are repository customizations, the variables needed to compile are provided by the
+    Gradle Plugin through the AndroidConfigurer class.
+
+    https://furydocs.io/mobile-gradle-android/latest/guide/#/
+ */
+android {
+    defaultConfig {
+        applicationId "$libraryGroupId" + ".testapp"
+        versionCode "$testAppVersionCode".toInteger()
+        versionName "$testAppVersionName"
+        
+    }
+
+    flavorDimensions "business"
+
+    productFlavors {
+        mercadolibre {
+            dimension "business"
+        }
+        mercadopago {
+            dimension "business"
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            aaptOptions {
+                cruncherEnabled false
+            }
+        }
+        release {
+            initWith(buildTypes.debug)
+            // We need this in true to test after executing ProGuard to check our ProGuard custom rules.
+            minifyEnabled true
+            shrinkResources true
+        }
+        mds {
+            // This build type "mds" can NOT be renamed because the keyword is used from our Mobile Distribution System.
+            debuggable true
+
+            signingConfig signingConfigs.debug
+
+            minifyEnabled true
+            shrinkResources true
+
+            if (project.hasProperty('mdsAppIdSuffix')) {
+                applicationIdSuffix "${project.mdsAppIdSuffix}"
+            }
+
+            if (project.hasProperty('mdsVersionNameSuffix')) {
+                versionNameSuffix "${project.mdsVersionNameSuffix}"
+            }
+        }
+    }
+
+    lintOptions {
+        // TODO: Delete this once play services is updated. Now we need it because play services brings support library 26
+        disable 'GradleCompatible'
+    }
+
+    packagingOptions {
+        exclude 'META-INF/ASL2.0'
+        exclude 'META-INF/LICENSE'
+        exclude("META-INF/*.kotlin_module") 
+    }
+
+    dexOptions.preDexLibraries = true
+}
+
+dependencies {
+    implementation project(':app')
+
+    implementation libs.meli.baseTestApp
+    implementation libs.meli.countryUtils
+    implementation libs.meli.commonsLogging
+    implementation libs.meli.configurationManager
+    // Both authentication libraries are used for the AuthenticationConfigurator
+    implementation libs.meli.authentication
+    implementation libs.meli.authenticationTestUi
+    
+    implementation libs.meli.ui
+
+    // Mercado Libre Core Libs Configurators
+    mercadolibreImplementation libs.meli.configurationMl.adjust.develop 
+    mercadolibreImplementation libs.meli.configurationMl.analytics.develop
+    mercadolibreImplementation libs.meli.configurationMl.behaviour.develop
+    mercadolibreImplementation libs.meli.configurationMl.crashtrack.develop
+    mercadolibreImplementation libs.meli.configurationMl.font.develop
+    mercadolibreImplementation libs.meli.configurationMl.fresco.develop
+    mercadolibreImplementation libs.meli.configurationMl.localStorage
+    mercadolibreImplementation libs.meli.configurationMl.loggin.develop
+    mercadolibreImplementation libs.meli.configurationMl.matt
+    mercadolibreImplementation libs.meli.configurationMl.melidata.develop
+    mercadolibreImplementation libs.meli.configurationMl.moduleTracking
+    mercadolibreImplementation libs.meli.configurationMl.onDemand
+    mercadolibreImplementation libs.meli.configurationMl.restClient.develop
+    mercadolibreImplementation libs.meli.configurationMl.site
+    mercadolibreImplementation libs.meli.configurationMl.webkit
+    mercadolibreImplementation libs.meli.configurationMl.workmanager
+
+    // Mercado Pago Core Libs Configurators
+    mercadopagoImplementation libs.meli.configurationMp.authentication 
+    mercadopagoImplementation libs.meli.configurationMp.font 
+    mercadopagoImplementation libs.meli.configurationMp.matt
+    mercadopagoImplementation libs.meli.configurationMp.traceability
+    mercadopagoImplementation libs.meli.configurationMp.ui
+    mercadopagoImplementation libs.meli.configurationMp.webkit
+}

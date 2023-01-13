@@ -1,0 +1,45 @@
+apply plugin: 'mercadolibre.gradle.config.library'
+/*
+    These configurations are repository customizations, the variables needed to compile are provided by the
+    Gradle Plugin through the AndroidConfigurer class.
+
+    https://github.com/mercadolibre/fury_mobile-gradle-android/blob/master/baseplugin/src/main/java/com/mercadolibre/android/gradle/baseplugin/core/action/configurers/AndroidConfigurer.kt
+ */
+android {
+
+    resourcePrefix 'dogfooding_app'
+
+    buildTypes {
+        debug {
+            // You can set different values for the same variable depending on the build type. These can be accessed by BuildConfig class
+        }
+
+        mds {
+            initWith(buildTypes.debug)
+        }
+
+        release {
+            // You can set different values for the same variable depending on the build type. These can be accessed by BuildConfig class
+        }
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+    dexOptions.preDexLibraries = true
+
+}
+
+dependencies {
+    implementation libs.misc.appCompat
+
+    implementation libs.meli.commonsLogging
+    implementation libs.meli.commonsCore
+    implementation libs.meli.ui
+
+    // Unit testing dependencies
+    testImplementation libs.meli.testingCore
+}

@@ -1,0 +1,28 @@
+buildscript {
+    // These repositories are used when building your project.
+    // They are NOT used to find your module's dependencies.
+    apply from:"$rootDir/gradle/repositories.gradle", to: buildscript
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradleBuildToolsVersion"
+        classpath "com.mercadolibre.android.gradle:baseplugin:$meliPluginGradleVersion"
+        classpath "com.mercadolibre.android.gradle:app:$meliPluginGradleVersion"
+        classpath "com.mercadolibre.android.gradle:library:$meliPluginGradleVersion"
+        classpath "com.github.dcendents:android-maven-gradle-plugin:$androidMavenGradlePlugin"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "com.getkeepsafe.dexcount:dexcount-gradle-plugin:$dexCountGradlePlugin"
+    }
+}
+
+apply plugin: 'mercadolibre.gradle.config.base'
+
+wrapper {
+    gradleVersion = gradleWrapperVersion
+    distributionType = Wrapper.DistributionType.BIN
+}
+
+allprojects {
+    // It's our convention to keep all modules in the same GitHub repository with the same group and version.
+    group = libraryGroupId
+    version = libraryVersion
+}
