@@ -1,4 +1,4 @@
-package com.mercadolibre.android.dogfooding.app
+package com.mercadolibre.android.dogfooding.configure
 
 import android.content.Intent
 import com.mercadolibre.android.testing.AbstractActivityTest

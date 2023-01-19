@@ -7,6 +7,6 @@ buildscript {
     }
 }
 
-include ':testapp', ':app'
+include ':testapp', ':configure'
 apply plugin: 'mercadolibre.gradle.config.settings'
 rootProject.name='dogfooding-android'

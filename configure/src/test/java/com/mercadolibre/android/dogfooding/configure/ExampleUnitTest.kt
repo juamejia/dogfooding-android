@@ -1,4 +1,4 @@
-package com.mercadolibre.android.dogfooding.app
+package com.mercadolibre.android.dogfooding.configure
 
 import org.junit.Assert
 import org.junit.Test
