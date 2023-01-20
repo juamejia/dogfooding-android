@@ -2,7 +2,6 @@ package com.mercadolibre.android.dogfooding.configure
 
 import android.os.Bundle
 import com.mercadolibre.android.commons.core.AbstractActivity
-import com.mercadolibre.android.dogfooding.configure.R
 
 class ASimpleFeatureActivity : AbstractActivity() {
 
