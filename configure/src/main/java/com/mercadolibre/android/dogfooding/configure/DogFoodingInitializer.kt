@@ -7,9 +7,9 @@ import com.mercadolibre.android.in_app_report.configure.InAppReportConfigure
 
 class DogFoodingInitializer(private val isDebug: Boolean) : Configurable {
 
-    val dogFoodingInaAppReport = DogfoodInAppReport(dogfoodService())
+    val dogFoodingInAppReport = DogfoodInAppReport(dogfoodService())
 
     override fun configure(context: Context) =
-        InAppReportConfigure.init(context, dogFoodingInaAppReport.settings(isDebug))
+        InAppReportConfigure.init(context, dogFoodingInAppReport.settings(isDebug))
 
 }
