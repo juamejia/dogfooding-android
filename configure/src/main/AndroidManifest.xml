@@ -9,7 +9,7 @@
         <activity
             android:name="com.mercadolibre.android.dogfooding.configure.ASimpleFeatureActivity"
             android:theme="@style/Theme.Base"
-            tools:ignore="AppLinkUrlError"
+            tools:ignore="AppLinkUrlError,MissingClass"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
