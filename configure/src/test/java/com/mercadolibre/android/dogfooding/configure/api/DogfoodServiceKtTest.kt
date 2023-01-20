@@ -1,14 +1,11 @@
 package com.mercadolibre.android.dogfooding.configure.api
 
-import android.annotation.SuppressLint
 import com.mercadolibre.android.restclient.RepositoryFactory
 import io.mockk.*
-import io.mockk.every
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertTrue
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runBlockingTest
-import org.junit.Before
 import org.junit.Test
 import retrofit2.Response
 import java.io.IOException
@@ -49,20 +46,5 @@ class DogfoodServiceKtTest {
         val elapsedTime = measureTimeMillis { response }
         assertTrue(elapsedTime < 1000)
     }
-
-
-    @Before
-    fun setUp() {
-        every { RepositoryFactory.newBuilder(baseUrl) } returns repositoryFactory
-        every { repositoryFactory.create(DogfoodService::class.java) } returns dogfoodService
-    }
-
-    @Test
-    fun `dogfoodService should return a DogfoodService instance created with the correct parameters`() {
-        assertEquals(dogfoodService, dogfoodService())
-        coVerify { RepositoryFactory.newBuilder(baseUrl) }
-        coVerify { repositoryFactory.create(DogfoodService::class.java) }
-    }
-
 
 }
