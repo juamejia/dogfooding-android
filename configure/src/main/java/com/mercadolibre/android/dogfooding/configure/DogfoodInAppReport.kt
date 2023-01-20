@@ -7,7 +7,7 @@ import com.mercadolibre.android.in_app_report.configure.setting
 import retrofit2.HttpException
 import retrofit2.Response
 
-internal class DogfoodInAppReport(
+class DogfoodInAppReport(
     private val service: DogfoodService
 ) {
 

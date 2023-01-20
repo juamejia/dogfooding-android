@@ -4,7 +4,7 @@ import com.mercadolibre.android.restclient.RepositoryFactory
 import retrofit2.Response
 import retrofit2.http.GET
 
-internal interface DogfoodService {
+interface DogfoodService {
     @GET("users/validate")
     suspend fun validate(): Response<Unit>
 }
