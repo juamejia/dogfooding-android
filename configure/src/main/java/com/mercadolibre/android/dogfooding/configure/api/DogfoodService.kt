@@ -9,9 +9,9 @@ interface DogfoodService {
     suspend fun validate(): Response<Unit>
 }
 
-internal fun dogfoodService(): DogfoodService {
-    return RepositoryFactory.newBuilder(BASE_URL)
+internal fun dogfoodService(): DogfoodService =
+    RepositoryFactory.newBuilder(BASE_URL)
         .create(DogfoodService::class.java)
-}
+
 
 private const val BASE_URL = "https://api.mercadolibre.com/public/dogfooding/"
