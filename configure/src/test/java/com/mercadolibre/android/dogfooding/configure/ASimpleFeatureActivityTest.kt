@@ -1,6 +1,7 @@
 package com.mercadolibre.android.dogfooding.configure
 
 import android.content.Intent
+import com.mercadolibre.android.dogfooding.app.ASimpleFeatureActivity
 import com.mercadolibre.android.testing.AbstractActivityTest
 import com.mercadolibre.android.testing.AbstractActivityTest.ActivityControllerFactory
 import org.junit.Assert
