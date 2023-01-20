@@ -17,7 +17,7 @@ import kotlin.system.measureTimeMillis
 class DogfoodServiceKtTest {
 
     private val dogfoodService: DogfoodService = mockk()
-    private val repositoryFactory: RepositoryFactory = mockk()
+    private val repositoryFactory: RepositoryFactory.Builder = mockk()
     private val baseUrl = "https://api.mercadolibre.com/public/dogfooding/"
 
     @Test
@@ -49,5 +49,20 @@ class DogfoodServiceKtTest {
         val elapsedTime = measureTimeMillis { response }
         assertTrue(elapsedTime < 1000)
     }
+
+
+    @Before
+    fun setUp() {
+        every { RepositoryFactory.newBuilder(baseUrl) } returns repositoryFactory
+        every { repositoryFactory.create(DogfoodService::class.java) } returns dogfoodService
+    }
+
+    @Test
+    fun `dogfoodService should return a DogfoodService instance created with the correct parameters`() {
+        assertEquals(dogfoodService, dogfoodService())
+        coVerify { RepositoryFactory.newBuilder(baseUrl) }
+        coVerify { repositoryFactory.create(DogfoodService::class.java) }
+    }
+
 
 }
