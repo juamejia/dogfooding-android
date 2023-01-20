@@ -1,7 +1,7 @@
 buildscript {
     // These repositories are used when building your project.
     // They are NOT used to find your module's dependencies.
-    apply from:"$rootDir/gradle/repositories.gradle", to: buildscript
+    apply from: "$rootDir/gradle/repositories.gradle", to: buildscript
 
     dependencies {
         classpath "com.android.tools.build:gradle:$gradleBuildToolsVersion"

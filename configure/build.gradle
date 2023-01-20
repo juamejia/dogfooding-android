@@ -31,6 +31,14 @@ android {
 
     dexOptions.preDexLibraries = true
 
+    jacocoConfiguration {
+        excludeList = [
+                "**/DogFoodingInitializer**",
+                "**/DogfoodService**",
+                "**/DogfoodServiceKtTest**",
+        ]
+    }
+
 }
 
 dependencies {
@@ -39,7 +47,20 @@ dependencies {
     implementation libs.meli.commonsLogging
     implementation libs.meli.commonsCore
     implementation libs.meli.ui
+    implementation libs.meli.authentication
+    implementation libs.misc.retrofit2ConverterGson
+    implementation libs.misc.retrofit2Retrofit
+    implementation libs.meli.configurationManager
+
+
+    implementation(libs.meli.inAppReportMlinappreport) {
+        force true
+    }
 
     // Unit testing dependencies
     testImplementation libs.meli.testingCore
+    testImplementation libs.misc.okhttp3Mockwebserver
+    testImplementation libs.misc.mockk
+    testImplementation libs.misc.kotlinxCoroutinesTest
+
 }
