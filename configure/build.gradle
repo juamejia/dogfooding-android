@@ -45,8 +45,7 @@ dependencies {
     implementation libs.meli.configurationManager
 
 
-
-    implementation (libs.meli.inAppReportMlinappreport) {
+    implementation(libs.meli.inAppReportMlinappreport) {
         force true
     }
 

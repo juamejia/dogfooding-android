@@ -1,7 +1,6 @@
 package com.mercadolibre.android.dogfooding.configure.dogfood
 
 import com.mercadolibre.android.authentication.AuthenticationFacade
-import com.mercadolibre.android.dogfooding.configure.DogFoodingInitializer
 import com.mercadolibre.android.dogfooding.configure.DogfoodInAppReport
 import com.mercadolibre.android.dogfooding.configure.api.DogfoodService
 import com.mercadolibre.android.in_app_report.core.infrastructure.services.api.service
@@ -41,11 +40,11 @@ class DogfoodInAppReportTest {
         mockkStatic(AuthenticationFacade::class)
 
         val dogfoodInAppReport = DogfoodInAppReport(service)
+
         val debug = false
         every { AuthenticationFacade.isUserLogged() } returns true
 
-        val response = MockResponse()
-            .setResponseCode(HttpURLConnection.HTTP_OK)
+        val response = MockResponse().setResponseCode(HttpURLConnection.HTTP_OK)
         mockWebServer.enqueue(response)
 
         runBlocking {
@@ -64,8 +63,7 @@ class DogfoodInAppReportTest {
         val debug = true
         every { AuthenticationFacade.isUserLogged() } returns false
 
-        val response = MockResponse()
-            .setResponseCode(HttpURLConnection.HTTP_NOT_FOUND)
+        val response = MockResponse().setResponseCode(HttpURLConnection.HTTP_NOT_FOUND)
         mockWebServer.enqueue(response)
 
         runBlocking {

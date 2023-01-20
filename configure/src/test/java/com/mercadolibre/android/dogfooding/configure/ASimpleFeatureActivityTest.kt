@@ -14,14 +14,20 @@ class ASimpleFeatureActivityTest : AbstractActivityTest<ASimpleFeatureActivity>(
         val intent = Intent()
         intent.putExtra(url, urlTest)
         val aSimpleFeatureActivity = startActivity(ASimpleFeatureActivity::class.java, intent).get()
-        Assert.assertNotNull("The received URL must not be null",
-            aSimpleFeatureActivity?.intent?.extras?.getSerializable(url))
-        Assert.assertEquals("The received URL is wrong", urlTest,
-            aSimpleFeatureActivity?.intent?.extras?.getString(url))
+        Assert.assertNotNull(
+            "The received URL must not be null",
+            aSimpleFeatureActivity?.intent?.extras?.getSerializable(url)
+        )
+        Assert.assertEquals(
+            "The received URL is wrong",
+            urlTest,
+            aSimpleFeatureActivity?.intent?.extras?.getString(url)
+        )
     }
 
     override fun getActivityControllers(): List<ActivityControllerFactory<ASimpleFeatureActivity>> {
-        val controllerFactories: MutableList<ActivityControllerFactory<ASimpleFeatureActivity>> = ArrayList()
+        val controllerFactories: MutableList<ActivityControllerFactory<ASimpleFeatureActivity>> =
+            ArrayList()
         // Add one controller factory that creates the activity without a specific intent
         controllerFactories.add(ActivityControllerFactory { bundle ->
             val controller = createActivity(ASimpleFeatureActivity::class.java, bundle)
