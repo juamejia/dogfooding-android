@@ -26,10 +26,9 @@ internal class DogfoodInAppReport(
         validate()
     }
 
-    private suspend fun validateUser(call: suspend DogfoodService.() -> Response<Unit>) =
-        try {
-            service.call().isSuccessful
-        } catch (e: HttpException) {
-            false
-        }
+    private suspend fun validateUser(call: suspend DogfoodService.() -> Response<Unit>) = try {
+        service.call().isSuccessful
+    } catch (e: HttpException) {
+        false
+    }
 }
