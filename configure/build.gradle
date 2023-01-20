@@ -53,4 +53,6 @@ dependencies {
     testImplementation libs.meli.testingCore
     testImplementation libs.misc.okhttp3Mockwebserver
     testImplementation libs.misc.mockk
+    testImplementation libs.misc.kotlinxCoroutinesTest
+
 }

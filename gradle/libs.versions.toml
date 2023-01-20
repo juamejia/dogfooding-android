@@ -22,6 +22,7 @@ inAppReportMlinappreport = "3.4.0"
 appCompat = "1.2.0"
 retrofit2 = "2.6.4"
 okhttp3Mockwebserver = "4.9.0"
+kotlinxCoroutinesTest = "1.5.2"
 
 ##################################################################################
 # Test libs
@@ -87,3 +88,4 @@ misc-retrofit2ConverterGson = { module = "com.squareup.retrofit2:converter-gson"
 misc-retrofit2Retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit2" }
 misc-mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 misc-okhttp3Mockwebserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "okhttp3Mockwebserver" }
+misc-kotlinxCoroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
