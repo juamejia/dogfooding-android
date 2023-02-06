@@ -75,6 +75,7 @@ dependencies {
     implementation libs.meli.baseTestApp
     implementation libs.meli.countryUtils
     implementation libs.meli.commonsLogging
+    implementation libs.meli.commonsDataDispacher
     implementation libs.meli.configurationManager
     // Both authentication libraries are used for the AuthenticationConfigurator
     implementation libs.meli.authentication
@@ -99,6 +100,8 @@ dependencies {
     mercadolibreImplementation libs.meli.configurationMl.site
     mercadolibreImplementation libs.meli.configurationMl.webkit
     mercadolibreImplementation libs.meli.configurationMl.workmanager
+    mercadolibreImplementation libs.meli.configurationMl.keepnite
+    mercadolibreImplementation libs.meli.configurationMl.actionbar
 
     // Mercado Pago Core Libs Configurators
     mercadopagoImplementation libs.meli.configurationMp.authentication 
@@ -107,4 +110,10 @@ dependencies {
     mercadopagoImplementation libs.meli.configurationMp.traceability
     mercadopagoImplementation libs.meli.configurationMp.ui
     mercadopagoImplementation libs.meli.configurationMp.webkit
+    mercadopagoImplementation libs.meli.configurationMp.actionbar
+
+    // Developer Mode
+    debugImplementation    libs.meli.developerModeCore
+    mdsImplementation      libs.meli.developerModeCore
+    releaseImplementation  libs.meli.developerModeNoCore
 }

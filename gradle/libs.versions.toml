@@ -12,8 +12,10 @@ mpConfigurer = "25.+"
 authentication = "22.+"
 commonsMeli = "28.+"
 ui = "10.+"
+keepnite = "1.0.1"
 baseTestApp = "9.+"
 configurationManager = "7.+"
+developerMode="9.+"
 inAppReportMlinappreport = "3.4.0"
 
 ##################################################################################
@@ -45,6 +47,7 @@ meli-configurationMl-onDemand = { module = "com.mercadolibre.android.configurati
 meli-configurationMl-moduleTracking = { module = "com.mercadolibre.android.configuration.provider:module-tracking-configurator", version.ref = "mlConfigurer" }
 meli-configurationMl-matt = { module = "com.mercadolibre.android.configuration.provider:matt-configurator", version.ref = "mlConfigurer" }
 meli-configurationMl-localStorage = { module = "com.mercadolibre.android.configuration.provider:local-storage-configurator", version.ref = "mlConfigurer" }
+meli-configurationMl-actionbar = { module ="com.mercadolibre.android.configuration.provider:action-bar-configurator", version.ref = "mlConfigurer"}
 meli-configurationMl-adjust-develop = { module = "com.mercadolibre.android.configuration.provider:adjust-configurator", version.ref = "mlConfigurerDevelop" }
 meli-configurationMl-analytics-develop = { module = "com.mercadolibre.android.configuration.provider:analytics-configurator", version.ref = "mlConfigurerDevelop" }
 meli-configurationMl-behaviour-develop = { module = "com.mercadolibre.android.configuration.provider:behaviour-configurator", version.ref = "mlConfigurerDevelop" }
@@ -54,6 +57,7 @@ meli-configurationMl-fresco-develop = { module = "com.mercadolibre.android.confi
 meli-configurationMl-loggin-develop = { module = "com.mercadolibre.android.configuration.provider:logging-configurator", version.ref = "mlConfigurerDevelop" }
 meli-configurationMl-melidata-develop = { module = "com.mercadolibre.android.configuration.provider:melidata-configurator", version.ref = "mlConfigurerDevelop" }
 meli-configurationMl-restClient-develop = { module = "com.mercadolibre.android.configuration.provider:restclient-configurator", version.ref = "mlConfigurerDevelop" }
+meli-configurationMl-keepnite = { module ="com.mercadolibre.android.remote.configuration:keepnite", version.ref = "keepnite"}
 
 ##################################################################################
 # Mp Configurer
@@ -64,6 +68,7 @@ meli-configurationMp-matt = { module = "com.mercadopago.android.configurer:matt-
 meli-configurationMp-traceability = { module = "com.mercadopago.android.configurer:traceability-configurer", version.ref = "mpConfigurer" }
 meli-configurationMp-ui = { module = "com.mercadopago.android.configurer:ui-configurator", version.ref = "mpConfigurer" }
 meli-configurationMp-webkit = { module = "com.mercadopago.android.configurer:webkit-configurer", version.ref = "mpConfigurer" }
+meli-configurationMp-actionbar = { module ="com.mercadopago.android.configurer:action-bar-configurer",version.ref = "mpConfigurer"}
 
 ##################################################################################
 # Meli libs
@@ -72,12 +77,15 @@ meli-authentication = { module = "com.mercadolibre.android:authentication", vers
 meli-authenticationTestUi = { module = "com.mercadolibre.android:authentication-test-ui", version.ref = "authentication" }
 meli-commonsCore = { module = "com.mercadolibre.android.commons:core", version.ref = "commonsMeli" }
 meli-commonsLogging = { module = "com.mercadolibre.android.commons:logging", version.ref = "commonsMeli" }
+meli-commonsDataDispacher = { module ="com.mercadolibre.android.commons:data-dispatcher", version.ref = "commonsMeli" }
 meli-configurationManager = { module = "com.mercadolibre.android:configuration-manager", version.ref = "configurationManager" }
 meli-ui = { module = "com.mercadolibre.android:ui", version.ref = "ui" }
 meli-testingCore = { module = "com.mercadolibre.android.testing:core", version.ref = "testing" }
 meli-baseTestApp = { module = "com.mercadolibre.android.basetestapp:base-test-app", version.ref = "baseTestApp" }
 meli-countryUtils = { module = "com.mercadolibre.android.basetestapp:country-utils", version.ref = "baseTestApp" }
 meli-inAppReportMlinappreport = { module = "com.mercadolibre.android.in_app_report:MLInAppReport", version.ref = "inAppReportMlinappreport" }
+meli-developerModeCore = { module ="com.mercadolibre.android.developer_mode:dm-core", version.ref = "developerMode"}
+meli-developerModeNoCore = { module ="com.mercadolibre.android.developer_mode:no-dm-core", version.ref = "developerMode"}
 
 
 ##################################################################################

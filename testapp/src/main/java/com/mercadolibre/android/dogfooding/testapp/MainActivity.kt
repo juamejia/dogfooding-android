@@ -26,5 +26,7 @@ class MainActivity : AbstractTestAppLandingActivity() {
 
         addIntentStarter(
                 DeeplinkOnlyIntentFactory("Dummy feature", Uri.parse("meli://dogfooding/dummy-feature")))
+        addIntentStarter(
+            DeeplinkOnlyIntentFactory("Developer Mode ", Uri.parse("meli://developer-mode/enabled")))
     }
 }
